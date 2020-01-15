@@ -1,7 +1,7 @@
 # DUT Info2 - FilmProvider
 
-### NOM : DOE
-### Prénom : John
+### NOM : HYVER
+### Prénom : Florian
 ### Groupe de TP : 
 - [x] 1
 
@@ -24,7 +24,7 @@ Modifiez le fichier README pour qu’il contienne vos nom et prénom en place de
 Commitez et pushez  dans votre dépôt distant en utilisant le message de commit suivant :
 
 > fix #0 Activité préliminaire terminée
-
+>
 Dans la suite de ce document, à chaque fois que vous trouverez un énoncé commençant par “fix #...”, vous devez committer et pusher les modifications sur votre dépôt distant en utilisant comme message de commit cet énoncé.
 
 Les corrections des activités suivantes seront transmises au fil de l’eau ; elles seront disponibles dans les différentes branches du projet Github suivant : https://github.com/Rodez-IUT/dut-info2-FilmProvider 
