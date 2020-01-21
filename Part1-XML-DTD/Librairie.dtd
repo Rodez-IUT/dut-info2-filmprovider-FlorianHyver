@@ -1,1 +1,20 @@
-
+<!ELEMENT librairie (en-tête, livre+)>
+        <!ELEMENT en-tête (#PCDATA|strong|em|img)*>
+        <!ELEMENT strong (#PCDATA)>
+        <!ELEMENT em (#PCDATA)>
+        <!ELEMENT img EMPTY>
+        <!ATTLIST img src CDATA #REQUIRED>
+        <!ATTLIST img title CDATA #IMPLIED>
+        <!ELEMENT livre (titre, auteurs, description, prix)>
+        <!ATTLIST livre ISBN NMTOKEN #REQUIRED>
+        <!ELEMENT titre (#PCDATA)>
+        <!ELEMENT auteurs ((nom,prenom?)*|(direction, membre)) >
+        <!ELEMENT nom (#PCDATA)>
+        <!ELEMENT prenom (#PCDATA)>
+        <!ELEMENT direction (nom,prenom?)>
+        <!ELEMENT membre (#PCDATA)>
+        <!ELEMENT description (#PCDATA|strong|em|img)>
+        <!ELEMENT prix (#PCDATA)>
+        <!ATTLIST prix devise (euro|livre|dollar) "euro">
+        <!ATTLIST prix type (HT|HTTC) "HT">
+        <!ATTLIST prix tva #FIXED"5.5">
