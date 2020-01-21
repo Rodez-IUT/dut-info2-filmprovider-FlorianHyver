@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE films SYSTEM "FilmProvider.dtd">
 <films>
     <realisateur id_realisateur="real_01">
         <prenom>Martin</prenom>
@@ -18,7 +19,7 @@
             <text>
                 Un homme est victime d'une machination. Il est pris au piège d'un système
                 qu'il a l'habitude de controler.
-           </text>
+            </text>
         </resume>
     </film>
     <film id_film="film_02" id_realisateur="real_02" annee="2003">
@@ -28,6 +29,7 @@
             <text>Une femme se venge des personnes qui ont voulu l'assassiner.</text>
         </resume>
     </film>
+
     <film id_film="film_03" id_realisateur="real_01" annee="1995">
         <titre>Casino</titre>
         <resume>
