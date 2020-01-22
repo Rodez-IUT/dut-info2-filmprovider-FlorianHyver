@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE librairie SYSTEM "Librairie.dtd">
+<librairie>
+    <en-tête>Ceci est un en-tête de texte libre d'une <strong>LIBRAIRIE</strong> &copyright;</en-tête>
+    <livre ISBN="TWHTR">
+        <titre>The Witcher</titre>
+        <auteurs>
+            <nom>Sapkowski</nom>
+            <prenom>Andrzej</prenom>
+        </auteurs>
+        <description>Le Sorceleur Geralt de Riv et un chasseur de monstre, plonger au sein d'un royaume en guerre</description>
+        <prix devise="livre" tva="5.5" type="HT">19,99</prix>
+    </livre>
+    <livre ISBN="CBP">
+        <titre>Cyberpunk 2077</titre>
+        <auteurs>
+            <collectif>
+                <direction>
+                    <nom>CD Project Red</nom>
+                </direction>
+                <membre>Jhon Doe</membre>
+            </collectif>
+        </auteurs>
+        <description>Vous êtes un homme talentueux dans un monde futuriste</description>
+        <prix tva="5.5" devise="euro" type="HTTC">64,99</prix>
+    </livre>
+</librairie>
