@@ -18,7 +18,7 @@
         <!ELEMENT description %formatTexte;>
         <!ELEMENT prix (#PCDATA)>
         <!ATTLIST prix devise (euro|livre|dollar) "euro"
-                       type (HT|HTTC) "HT"
+                       type (HT|TTC) "HT"
                        tva NMTOKEN #FIXED "5.5">
         <!ENTITY copyright "&#xA9;Librairie et Internet 2020">
 

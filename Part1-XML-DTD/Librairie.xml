@@ -22,6 +22,6 @@
             </collectif>
         </auteurs>
         <description>Vous êtes un homme talentueux dans un monde futuriste</description>
-        <prix tva="5.5" devise="euro" type="HTTC">64,99</prix>
+        <prix tva="5.5" devise="euro" type="TTC">64,99</prix>
     </livre>
 </librairie>
