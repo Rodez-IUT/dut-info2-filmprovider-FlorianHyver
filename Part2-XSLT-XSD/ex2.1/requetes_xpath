@@ -1,0 +1,8 @@
+1; /films/film/titre
+2; /films/film[titre="Minority Report"]/resume
+3; /films/realisateur[last()]/nom
+4; /films/film[position()=2]/titre
+5; /films/film[contains(resume/text,"mafia")]/self::film[position()]
+6; /films/film/resume[image]/following::titre
+7; /films/film[@id_realisateur = (/films/realisateur[contains(nom, "Scorsese")]/self::realisateur/@id_realisateur)]/self::film/@annee
+8; count(/films/film[@annee = "2003"])
