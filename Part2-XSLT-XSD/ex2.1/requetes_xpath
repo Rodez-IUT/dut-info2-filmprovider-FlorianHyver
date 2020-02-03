@@ -1,8 +1,9 @@
 1; /films/film/titre
-2; /films/film[titre="Minority Report"]/resume
+2; /films/film[titre="Minority Report"]/resume/text
 3; /films/realisateur[last()]/nom
 4; /films/film[position()=2]/titre
-5; /films/film[contains(resume/text,"mafia")]/self::film[position()]
+5; /films/film[contains(resume/text,"mafia")]/number(count(preceding-sibling::film)+1)
 6; /films/film/resume[image]/following::titre
 7; /films/film[@id_realisateur = (/films/realisateur[contains(nom, "Scorsese")]/self::realisateur/@id_realisateur)]/self::film/@annee
+   //film[//realisateur[nom="Scorsese"]/@id_realisateur = @id_realisateur]/@annee
 8; count(/films/film[@annee = "2003"])
