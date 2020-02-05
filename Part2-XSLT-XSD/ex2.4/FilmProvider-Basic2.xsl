@@ -29,8 +29,8 @@
         <tr>
             <td><xsl:value-of select="titre"/> </td>
             <td><xsl:value-of select="resume/text"/></td>
-            <td><xsl:value-of select="//realisateur[@id_realisateur=$id_film]/prenom"/> </td>
-            <td><xsl:value-of select="//realisateur[@id_realisateur=$id_film]/nom"/> </td>
+            <td><xsl:value-of select="../realisateur[@id_realisateur=$id_film]/prenom"/> </td>
+            <td><xsl:value-of select="../realisateur[@id_realisateur=$id_film]/nom"/> </td>
         </tr>
     </xsl:template>
 </xsl:stylesheet>
