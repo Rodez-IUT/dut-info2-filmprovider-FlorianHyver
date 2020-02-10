@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fox:films xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation=" http://formationxml/filmprovider FilmProvider.xsd"
+         xmlns:fox="http://formationxml/filmprovider">
+
+    <fox:realisateur id_realisateur="real0122">
+        <fox:prenom>martin</fox:prenom>
+        <fox:nom>scorses</fox:nom>
+    </fox:realisateur>
+    <fox:film id_film="real0122" id_realisateur="ral02" annee="1222">
+    <fox:titre>EL TITRO</fox:titre>
+    <fox:resume>
+        <fox:text>CECI EST UN TEXT YOLO</fox:text>
+    </fox:resume>
+    </fox:film>
+
+</fox:films>
+
