@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="films" type="FILMS"/>
+    <xs:element name="prenom" type="xs:string"/>
+    <xs:element name="nom" type="xs:string"/>
+
+    <xs:complexType name="ReaType">
+        <xs:sequence>
+            <xs:element ref="prenom"/>
+            <xs:element ref="nom"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:attributeGroup name="AttFilm">
+        <xs:attribute name="id_film" type="xs:string" use="required"/>
+        <xs:attribute name="id_realisateur" type="xs:string" use="required"/>
+        <xs:attribute name="annee" type="xs:string" use="required"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="ContFilm">
+        <xs:sequence>
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="resume">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="text" type="xs:string"/>
+                        <xs:choice minOccurs="0">
+                            <xs:element name="image">
+                                <xs:complexType>
+                                    <xs:attribute name="source" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name= "FILMS" >
+        <xs:sequence>
+            <xs:element name="realisateur" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="ReaType">
+                            <xs:attribute name="id_realisateur" type="xs:string" use="required"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="film" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="ContFilm">
+                            <xs:attributeGroup ref="AttFilm"/>
+                        </xs:extension>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
