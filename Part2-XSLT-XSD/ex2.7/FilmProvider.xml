@@ -3,15 +3,26 @@
          xsi:schemaLocation=" http://formationxml/filmprovider FilmProvider.xsd"
          xmlns:fox="http://formationxml/filmprovider">
 
-    <fox:realisateur id_realisateur="real0122">
+    <fox:realisateur id_realisateur="real_1">
         <fox:prenom>martin</fox:prenom>
         <fox:nom>scorses</fox:nom>
     </fox:realisateur>
-    <fox:film id_film="real0122" id_realisateur="ral02" annee="1222">
-    <fox:titre>EL TITRO</fox:titre>
-    <fox:resume>
-        <fox:text>CECI EST UN TEXT YOLO</fox:text>
-    </fox:resume>
+    <fox:realisateur id_realisateur="real_2">
+        <fox:prenom>andrew</fox:prenom>
+        <fox:nom>solovidech</fox:nom>
+    </fox:realisateur>
+    <fox:film id_film="film_32" id_realisateur="real_2" annee="1922">
+        <fox:titre>EL TITRO</fox:titre>
+        <fox:resume>
+            <fox:text>CECI EST UN TEXT YOLO</fox:text>
+        </fox:resume>
+    </fox:film>
+    <fox:film id_film="film_42" id_realisateur="real_1" annee="2005">
+        <fox:titre>ESTE LA BAMBA</fox:titre>
+        <fox:resume>
+            <fox:text>Este la bamba en este en el centre de mexico...</fox:text>
+            <fox:image source="img_source.png"/>
+        </fox:resume>
     </fox:film>
 
 </fox:films>

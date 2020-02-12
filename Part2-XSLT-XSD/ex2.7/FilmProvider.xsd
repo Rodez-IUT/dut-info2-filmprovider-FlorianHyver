@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://formationxml/filmprovider"
+           xmlns:fox="http://formationxml/filmprovider"
+           elementFormDefault="qualified">
+
+    <xs:element name="films" type="fox:FILMS">
+        <xs:key name="pkReal">
+            <xs:selector xpath="fox:realisateur"/>
+            <xs:field xpath="@id_realisateur"/>
+        </xs:key>
+        <xs:keyref name="fkReal" refer="pkReal">
+            <xs:selector xpath="fox:film"/>
+            <xs:field xpath="@id_realisateur"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:element name="prenom" type="xs:string"/>
+    <xs:element name="nom" type="xs:string"/>
+
+    <xs:complexType name="ReaType">
+        <xs:sequence>
+            <xs:element ref="fox:prenom"/>
+            <xs:element ref="fox:nom"/>
+        </xs:sequence>
+        <xs:attribute name="id_realisateur" type="fox:idRea" use="required"/>
+    </xs:complexType>
+
+    <xs:attributeGroup name="AttFilm">
+        <xs:attribute name="id_film" type="fox:idFilm" use="required"/>
+        <xs:attribute name="id_realisateur" type="fox:idRea" use="required"/>
+        <xs:attribute name="annee" type="fox:annee" use="required"/>
+    </xs:attributeGroup>
+    
+    <xs:simpleType name="annee">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1920"/>
+            <xs:maxInclusive value="2006"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="idRea">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="real_[A-Za-z0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="idFilm">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="film_[A-Za-z0-9]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ContFilm">
+        <xs:sequence>
+            <xs:element name="titre" type="xs:string"/>
+            <xs:element name="resume">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="text" type="xs:string"/>
+                        <xs:choice minOccurs="0">
+                            <xs:element name="image">
+                                <xs:complexType>
+                                    <xs:attribute name="source" type="xs:string"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:choice>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attributeGroup ref="fox:AttFilm"/>
+    </xs:complexType>
+
+    <xs:complexType name= "FILMS" >
+        <xs:sequence>
+            <xs:element name="realisateur"  type="fox:ReaType" maxOccurs="unbounded"/>
+            <xs:element name="film" type="fox:ContFilm" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
